@@ -1,3 +1,7 @@
+body {
+    font-family: system-ui;
+}
+
 .flex_parent {
     display: flex;
 }
@@ -6,3 +10,4 @@
     flex: 1;
     padding: auto;
 }
+
