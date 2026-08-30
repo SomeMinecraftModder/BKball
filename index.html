@@ -9,7 +9,7 @@
 <body>
     <div class="flex_parent">
         <h1 class="flex_child">Hello</h1>
-        <svg viewBox="0 0 140 200" style="background-color:rgb(209, 171, 45)" class="flex_child">
+        <svg id="board" viewBox="0 0 140 200" style="background-color:rgb(209, 171, 45)" class="flex_child">
             <line id="left2" x2="5" y2="5" x1="0" y1="0" style="stroke:#dbbf54;stroke-width:2.5;stroke-dasharray:4" >
                 <animate id="left21" attributeName="x1" values="0" dur=" 0.2s" fill="freeze"/>
                 <animate id="left22" attributeName="y1" values="0" dur=" 0.2s" fill="freeze"/>
@@ -100,6 +100,17 @@ var old_x = x
 var y = 0
 var old_y = y
 
+function changeSegment(name) {
+        
+        var segment = document.getElementById(name + "1");
+        segment.setAttribute("values", old_x+";"+x);
+        segment.beginElement();
+        var segmenty = document.getElementById(name + "2");
+        segmenty.setAttribute("values", old_y+";"+y);
+        segmenty.beginElement();
+        console.log(name)
+        }
+
 function actualize(){
     old_x = x
     x = ((d**2)-(r**2)+(R**2))/(2*d)
@@ -118,16 +129,7 @@ function actualize(){
     // var circle = document.getElementById("circlexy");
     // circle.setAttribute("values", "translate("+x+","+ y+")");
 
-    function changeSegment(name) {
-        
-        var segment = document.getElementById(name + "1");
-        segment.setAttribute("values", old_x+";"+x);
-        segment.beginElement();
-        var segmenty = document.getElementById(name + "2");
-        segmenty.setAttribute("values", old_y+";"+y);
-        segmenty.beginElement();
-        console.log(name)
-
+    
         /*
         var newAnimatex = document.createElement("animate");
         var currentAnimatex = document.getElementById(name);
@@ -144,7 +146,7 @@ function actualize(){
         // newAnimatey.setAttribute("fill", "freeze")
         newAnimatey.setAttribute("attributeName", "y1")
         newAnimatey.setAttribute("values", y) */
-    }
+    
     changeSegment("right1")
     changeSegment("right2")
     changeSegment("right3")
@@ -152,6 +154,15 @@ function actualize(){
     changeSegment("left2")
     changeSegment("left3")
     
+
+
+    function boardHole(coordonates, radius) {
+        var newAnimatex = document.createElement("animate");
+        var currentAnimatex = document.getElementById(name);
+        currentAnimatex.appendChild(newAnimatex);
+        newAnimatex.setAttribute("dur", " 0.2s")
+    }
+
     // var segment = document.getElementById("right11");
     // segment.setAttribute("x1", x);
     // var segment = document.getElementById("right12");
