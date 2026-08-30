@@ -1,3 +1,5 @@
+"use strict";
+
 function showKeyPress(evt) {
     if (String.fromCharCode(evt.charCode) == "p") {
         r = r + 2
