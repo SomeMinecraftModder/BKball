@@ -15,7 +15,7 @@ function showKeyPress(evt) {
     if (char == "z") {
         R = R - 2
     }
-    
+
     actualize()
 }
 
@@ -51,10 +51,10 @@ var y = 0
 var old_y = y
 
 function changeSegment(name) {
-
     var segment = document.getElementById(name + "1");
     segment.setAttribute("values", old_x + ";" + x);
     segment.beginElement();
+    
     var segmenty = document.getElementById(name + "2");
     segmenty.setAttribute("values", old_y + ";" + y);
     segmenty.beginElement();
