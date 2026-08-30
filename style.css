@@ -11,3 +11,10 @@ body {
     padding: auto;
 }
 
+/* Media Queries */
+
+@media (max-width: 640px) { 
+    .flex_parent {
+        flex-direction: column;
+    }
+ }
