@@ -1,18 +1,21 @@
 "use strict";
 
 function showKeyPress(evt) {
-    if (String.fromCharCode(evt.charCode) == "p") {
+    let char = String.fromCharCode(evt.charCode)
+
+    if (char == "p") {
         r = r + 2
     }
-    if (String.fromCharCode(evt.charCode) == "o") {
+    if (char == "o") {
         r = r - 2
     }
-    if (String.fromCharCode(evt.charCode) == "a") {
+    if (char == "a") {
         R = R + 2
     }
-    if (String.fromCharCode(evt.charCode) == "z") {
+    if (char == "z") {
         R = R - 2
     }
+    
     actualize()
 }
 
