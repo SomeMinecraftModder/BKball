@@ -1,0 +1,8 @@
+.flex_parent {
+    display: flex;
+}
+
+.flex_child {
+    flex: 1;
+    padding: auto;
+}
